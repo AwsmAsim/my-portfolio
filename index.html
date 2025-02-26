@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    
+    <canvas id="game-canvas"></canvas>
+    
+    <div id="score-display">SCORE: 0</div>
+    
+    <div class="content-wrapper">
+        <header id="home">
+            <img id="spaceship" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2303DAC6'><path d='M12,2L4,12H8V20H16V12H20L12,2Z'/></svg>" alt="Spaceship">
+            <div class="name"></div>
+            <div class="title"></div>
+            
+            <div class="contact-links"></div>
+            
+            <div class="scroll-indicator">
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 5V19M12 19L5 12M12 19L19 12" stroke="#03DAC6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+        </header>
+        
+        <section id="experience">
+            <h2 class="section-title">MISSION LOG</h2>
+            <div id="experience-container"></div>
+        </section>
+        
+        <section id="projects">
+            <h2 class="section-title">SPACE MISSIONS</h2>
+            <div id="projects-container"></div>
+        </section>
+        
+        <section id="education">
+            <h2 class="section-title">TRAINING ACADEMY</h2>
+            <div id="education-container"></div>
+        </section>
+        
+        <section id="skills">
+            <h2 class="section-title">SPACECRAFT ARSENAL</h2>
+            <div id="skills-container" class="skills-container"></div>
+        </section>
+        
+        <section id="achievements">
+            <h2 class="section-title">MISSION ACCOMPLISHMENTS</h2>
+            <ul id="achievements-container" class="achievements-list"></ul>
+        </section>
+        
+        <footer>
+            <p>© 2025 <span id="footer-name"></span> | Space Explorer and Full Stack Developer</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Load and render portfolio data
+        async function loadPortfolioData() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                
+                // Update meta information
+                document.title = data.meta.title;
+                document.querySelector('.name').textContent = data.meta.name;
+                document.querySelector('.title').textContent = data.meta.role;
+                document.getElementById('footer-name').textContent = data.meta.name;
+                
+                // Update contact links
+                const contactLinks = document.querySelector('.contact-links');
+                contactLinks.innerHTML = `
+                    <a href="mailto:${data.contact.email}">EMAIL</a>
+                    <a href="${data.contact.linkedin}" target="_blank">LINKEDIN</a>
+                    <a href="${data.contact.github}" target="_blank">GITHUB</a>
+                    <a href="${data.contact.scopus}" target="_blank">SCOPUS</a>
+                    // <a href="tel:${data.contact.phone}">CALL</a>
+                `;
+                
+                // Render experience section
+                const experienceContainer = document.getElementById('experience-container');
+                experienceContainer.innerHTML = data.experience.map(exp => `
+                    <div class="experience-item">
+                        <h3 class="experience-title">${exp.title}</h3>
+                        <div class="experience-company">
+                            <span>${exp.company}</span>
+                            <span class="experience-date">${exp.period}</span>
+                        </div>
+                        <div class="experience-description">
+                            <ul>
+                                ${exp.responsibilities.map(resp => `<li>${resp}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Render projects section
+                const projectsContainer = document.getElementById('projects-container');
+                projectsContainer.innerHTML = data.projects.map(project => `
+                    <div class="project-item">
+                        <h3 class="project-title">${project.title}</h3>
+                        <div class="project-date">
+                            <span>${project.period}</span>
+                            ${project.link ? `
+                                <div class="project-links">
+                                    <a href="${project.link}" target="_blank">View App</a>
+                                </div>
+                            ` : ''}
+                        </div>
+                        <div class="project-description">
+                            <ul>
+                                ${project.achievements.map(achievement => `<li>${achievement}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Render education section
+                const educationContainer = document.getElementById('education-container');
+                educationContainer.innerHTML = `
+                    <div class="education-item">
+                        <h3 class="experience-title">${data.education.degree}</h3>
+                        <div class="education-institution">
+                            <span>${data.education.institution}</span>
+                            <span>Graduated ${data.education.graduation}</span>
+                        </div>
+                        <p>CGPA: ${data.education.cgpa}</p>
+                    </div>
+                `;
+                
+                // Render skills section
+                const skillsContainer = document.getElementById('skills-container');
+                skillsContainer.innerHTML = Object.entries(data.skills).map(([category, skills]) => `
+                    <div class="skill-category">
+                        <h3>${category}</h3>
+                        <div class="skill-list">
+                            ${skills.map(skill => `<div class="skill-item">${skill}</div>`).join('')}
+                        </div>
+                    </div>
+                `).join('');
+                
+                // Render achievements section
+                const achievementsContainer = document.getElementById('achievements-container');
+                achievementsContainer.innerHTML = data.achievements.map(achievement => `
+                    <li class="achievement-item">
+                        <span class="achievement-icon">${achievement.icon}</span>
+                        ${achievement.description}
+                    </li>
+                `).join('');
+                
+            } catch (error) {
+                console.error('Error loading portfolio data:', error);
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            loadPortfolioData();
+            // Your existing game initialization code will run from scripts.js
+        });
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>

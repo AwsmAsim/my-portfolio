@@ -1,0 +1,99 @@
+{
+  "meta": {
+    "title": "Asim Junaid | Space Portfolio",
+    "name": "ASIM JUNAID",
+    "role": "Full Stack Developer | Backend Specialist"
+  },
+  "contact": {
+    "email": "this.is.awsm.asim@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/asim-junaid-07224517b/",
+    "github": "https://github.com/AwsmAsim",
+    "scopus": "https://www.scopus.com/authid/detail.uri?authorId=58132621600"
+  },
+  "experience": [
+    {
+      "title": "Backend Developer (Specialist Programmer)",
+      "company": "Infosys, Bengaluru",
+      "period": "08/2023 - Present",
+      "responsibilities": [
+        "Working on Apple Online Store Checkout Applications using Java/Scala, Spring Boot, JUnit, ScalaTest, Spring Data JPA, PostgreSQL on AWS RDS.",
+        "Implemented Apache Kafka for asynchronous event-driven events like sending analytics and invoice emails.",
+        "Developed Consolidation Delivery Feature across multiple microservices, resulting in significant shipping cost savings.",
+        "Monitored Splunk logs and resolved 100+ bugs across production and non-production environments.",
+        "Played a pivotal role during Apple's NPI event, monitoring user interactions with the online store checkout to identify bottlenecks and implement optimizations."
+      ]
+    },
+    {
+      "title": "Software Engineer",
+      "company": "Gurucool Pvt Ltd, Delhi",
+      "period": "02/2023 - 08/2023",
+      "responsibilities": [
+        "Led frontend development using Flutter with MVC architecture, GetX state management, Dio for backend integration, Firebase Authentication, Firecloud, and Strapi with PostgreSQL.",
+        "Developed a complete application from scratch including social media feed, chats, notifications, group feeds, and Instagram-like stories.",
+        "Optimized app performance to achieve 100% crash-free users and reduced storage requirements to 50 MB for an app with 150,000+ downloads."
+      ]
+    },
+    {
+      "title": "Backend Developer Intern",
+      "company": "Superdev, Delhi",
+      "period": "11/2022 - 02/2023",
+      "responsibilities": [
+        "Developed a License Validation System from scratch using Vercel Cloud functions, MySQL database, and Gumroad Payment API.",
+        "Wrote clean code in Node.js with Express.js for handling API calls and mysql2 npm package for database connectivity."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "Nasheedio - Spotify Alternative",
+      "period": "03/2024 - Present",
+      "link": "#",
+      "achievements": [
+        "Led and managed the tech team operations across Backend, Website, and Mobile App development.",
+        "Achieved 100,000+ downloads on Play Store with a 99% crash-free rate.",
+        "Created the Flutter App from scratch with features including Authentication, YouTube Content Player, Original Content Player, conference calling, and AI assistant.",
+        "Utilized GetX, Firebase, StrapiJS, PostgreSQL, and Dio for development."
+      ]
+    },
+    {
+      "title": "Blockchain Based Pension Management System",
+      "period": "03/2024 - Present",
+      "achievements": [
+        "Created an Ethereum dApp using Flutter and Solidity to address bureaucratic corruption in the pension system.",
+        "Won TECHEXPO Hackathon with this innovative project."
+      ]
+    }
+  ],
+  "education": {
+    "degree": "B.Tech in Computer Science",
+    "institution": "Pranveer Singh Institute of Technology (AKTU), Kanpur",
+    "graduation": "July 2023",
+    "cgpa": "8.1/10"
+  },
+  "skills": {
+    "Server Side": ["Spring Boot", "ExpressJS", "MySQL", "PostgreSQL", "MongoDB", "Firebase", "Kafka"],
+    "Front-end": ["Flutter", "HTML", "CSS", "Bootstrap 5", "Angular"],
+    "Languages": ["Java", "Scala", "Dart", "C++", "Python"],
+    "Soft Skills": ["Leadership", "Business Communication", "Agile Methodologies"],
+    "Dev Tools": ["AWS", "Git", "Postman", "Docker", "Radar"],
+    "CS Fundamentals": ["Data Structures", "Algorithms", "OOPS", "Microservices", "SQL"]
+  },
+  "achievements": [
+    {
+      "icon": "🏆",
+      "description": "Ranked top 500 of 200k+ participants in HackwithInfy and later got hired as Power Programmer by Infosys."
+    },
+    {
+      "icon": "🎓",
+      "description": "GATE-Computer Science Qualified with All-India Rank 8644."
+    },
+    {
+      "icon": "🥈",
+      "description": "Winners (Second Place), TECHEXPO Hackathon, PSIT Kanpur."
+    },
+    {
+      "icon": "📝",
+      "description": "Published Research Paper - Analyzing the Performance of a DAPP Using Blockchain 3.0, IEEE."
+    }
+  ]
+}
