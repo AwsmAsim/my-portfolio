@@ -47,7 +47,7 @@
     {
       "title": "Nasheedio - Spotify Alternative",
       "period": "03/2024 - Present",
-      "link": "#",
+      "link": "https://play.google.com/store/apps/details?id=com.nasheedio.app&hl=en_IN",
       "achievements": [
         "Led and managed the tech team operations across Backend, Website, and Mobile App development.",
         "Achieved 100,000+ downloads on Play Store with a 99% crash-free rate.",
@@ -75,7 +75,7 @@
     "Front-end": ["Flutter", "HTML", "CSS", "Bootstrap 5", "Angular"],
     "Languages": ["Java", "Scala", "Dart", "C++", "Python"],
     "Soft Skills": ["Leadership", "Business Communication", "Agile Methodologies"],
-    "Dev Tools": ["AWS", "Git", "Postman", "Docker", "Radar"],
+    "Dev Tools": ["AWS", "Git", "Postman", "Docker", "Kubernetes", "Splunk", "Gumroad", "Firecloud", "Vercel"],
     "CS Fundamentals": ["Data Structures", "Algorithms", "OOPS", "Microservices", "SQL"]
   },
   "achievements": [
